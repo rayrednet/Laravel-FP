@@ -60,6 +60,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     
     Route::post('/order/{slug}', [OrderController::class, 'addMenu'])->name('order.addMenu');
     Route::get('/chefs', [ChefController::class, 'index'])->name('chefs.index');
+    
+    // Order History Routes
+    Route::get('/history', function () {
+        return view('history', ['title' => 'Order History Page']);
+    });
 });
 
 // Authentication routes
